@@ -1,0 +1,21 @@
+@misc{reportindustria,
+  howpublished = "\url{https://www.un-industria.it/canale/sezioni/notizia/98328/report-cyber-risk-self-assessment-/}",
+}
+
+@misc{australian,
+  howpublished = "\url{https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-assessment-process-guide}",
+}
+
+@misc{questionario,
+  howpublished = "\url{https://it.surveymonkey.com/r/95JBQW9}",
+}
+
+@article{oliva2017sparse,
+  title={Sparse and distributed analytic hierarchy process},
+  author={Oliva, Gabriele and Setola, Roberto and Scala, Antonio},
+  journal={Automatica},
+  volume={85},
+  pages={211--220},
+  year={2017},
+  publisher={Elsevier}
+}

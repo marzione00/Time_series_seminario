@@ -1,0 +1,430 @@
+\documentclass[14pt]{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{beaver} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+\usepackage{pifont}
+\usepackage[bookmarks]{hyperref}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage{braket}
+\usepackage{amsmath,amsfonts,amsthm,bm}
+\addbibresource{bibliography.bib}
+\newtheorem*{remark}{Remark}
+\usepackage[italian]{babel}
+\usepackage[utf8x]{inputenc}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{Pic/Cover_image.jpg}}
+\title[Key performance indicators review]{Survey about the key performance indicators}}
+\author{Marzio De Corato}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\vspace{+6 cm}  \titlepage
+\end{frame}
+
+\usebackgroundtemplate{ } 
+
+% Uncomment these lines for an automatically generated outline.
+%\begin{frame}{Outline}
+%\setcounter{tocdepth}{1}
+%\begin{center}
+%  \tableofcontents
+%\end{center}
+%\end{frame}
+
+
+\section{Introduction}
+
+\begin{frame}{Summary}
+\begin{center}
+\begin{itemize}
+\item Report Cyber Risk Self Assessment (UNINDUSTRIA) \cite{reportindustria}
+\item Essential eight assessment process guide (Australian Government) \cite{australian}
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\section{Unindustria}
+
+\begin{frame}{}
+\begin{center}
+{\Large Report Cyber Risk Self Assessment (UNINDUSTRIA)}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Report Cyber Risk Self Assessment  \cite{reportindustria}}
+\begin{center}
+\includegraphics[width=0.6\linewidth]{Pic/Cover_unindustria.png}\\
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Scopo }
+\begin{center}
+\begin{itemize}
+\item Progetto Cyber Risk Self-Assessment
+\item Valutare in modo quantitativo e scientifico la preparazione delle PMI in tema di cybersecurity
+\item Fornire dei key performance indicator per la valutazione del punto precedente
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Report Cyber Risk Self Assessment  \cite{reportindustria}}
+\begin{center}
+\includegraphics[width=\linewidth]{Pic/Fasi_progetto_unidustria.png}\\
+\end{center}
+\end{frame}
+
+\begin{frame}{Report Cyber Risk Self Assessment  \cite{reportindustria}}
+
+Il questionario, disponibile on-line \cite{questionario},  è costituito da 32 domande in cui vi sono i seguenti argomenti: 
+\begin{itemize}
+\item carattere generale sull'organizzazione della società \item fatturato annuo
+\item numero di dipendenti
+\item forma societaria ecc.
+\item domande carattere tecnico/organizzativo
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Report Cyber Risk Self Assessment  \cite{reportindustria}}
+\begin{center}
+Le domande di carattere tecnico sono suddivise nelle seguenti macrocategorie
+\end{center}
+\begin{center}
+\includegraphics[width=0.6\linewidth]{Pic/Macrocat.png}\\
+\end{center}
+\begin{center}
+Sulla base delle risposte viene formulato un cybersecurity score
+\end{center}
+\end{frame}
+
+\begin{frame}{Report Cyber Risk Self Assessment  \cite{reportindustria}}
+\begin{itemize}
+\item Il cybersecurity score varia da 0 a 1 
+\item E' costruito sulla base delle risposte attribuendo a ciascuna di queste un peso 
+\item Il peso di ciascuna risposta è stabilito con la medologia Sparse Analytic Hierarchy Process (SHAP) \cite{oliva2017sparse} sulla base di una preferenza di scenari decisa da un insieme di  esperti del settore 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Questionario (tecnico) \cite{reportindustria}}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Pic/Domande_1_IND.png}\\
+\end{center}
+\end{frame}
+
+\begin{frame}{Questionario (tecnico) \cite{reportindustria}}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Pic/Domande_2_IND.png}\\
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Report Cyber Risk Self Assessment  \cite{reportindustria}}
+\begin{center}
+Pesi ottenuti con la metodologia SHAP
+\includegraphics[width=\linewidth]{Pic/Pesi_Ottenuti.png}\\
+\end{center}
+\end{frame}
+
+\begin{frame}{Livello di maturità per le tematiche di sicurezza \cite{reportindustria}}
+\begin{center}
+Livello di maturità nelle singole tematiche
+\includegraphics[width=0.8\linewidth]{Pic/maturita_singole_tematiche.png}\\
+\end{center}
+\end{frame}
+
+\begin{frame}{Metodologia SHAP \cite{reportindustria,oliva2017sparse}}
+\begin{center}
+Il cyber security score è dato da
+\end{center}
+\begin{equation*}
+CSS=\sum_{u=1}^{15}p_{u}x_{u}
+\end{equation*}
+\begin{equation*}
+\sum_{u=1}^{15}x_{u}=1
+\end{equation*}
+\begin{center}
+I $p_{u}$ sono le caratteristiche dell'azienda. Si assegna 1 se presente, 0 in caso contrario (e.g. aggiornamento software). 
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}{Metodologia SHAP \cite{reportindustria,oliva2017sparse}}
+\begin{center}
+\textbf{Problema:} come trasformare la conoscenza di un insieme di esperti in un un set di pesi ?
+\end{center}
+\begin{center}
+\begin{itemize}
+\item Vengono proposti agli esperti coppie di scenari: questi devono porli in ordine di preferenza ($=,>,>>,>>>$) 
+\item A differenza degli Analiytic Hierarchy Process, il confronto non deve essere fatto fra tutti ma solo per quelli in cui l'esperto si sente sicuro di poter esprimere una preferenza
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Metodologia SHAP \cite{reportindustria,oliva2017sparse}}
+\begin{center}
+Esempio di confronto fra scenari
+\end{center}
+\begin{center}
+\includegraphics[width=0.6\linewidth]{Pic/confronto_ex.png}\\
+\end{center}
+\end{frame}
+
+\begin{frame}{Metodologia SHAP\cite{reportindustria,oliva2017sparse}} 
+\begin{center}
+\begin{itemize}
+\item Si costruiscono $i$ matrici $W^{i}_{uv}$ per ogni esperto fra le coppie di scenari $u,v$ 
+\item $W_{uv}=1$ per $=$ ; $W_{uv}=3$ per $>$; $W_{uv}=5$ per $>>$ e $W_{uv}=7$ per $>>>$ 
+\item $W_{uv}=1\W_{vu}$
+\item Dobbiamo attribuire un valore ai pesi basandoci sui pareri forniteci degli esperti, in particolare i pesi devono minimizzare il disaccordo fra $W_{uv}^{i}$ 
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Metodologia SHAP\cite{reportindustria,oliva2017sparse}} 
+\begin{center}
+Il problema diventa quindi 
+\end{center}
+\begin{center}
+\begin{equation*}
+\text{arg \textit{min}}_{x\in \mathbb{R}_{+}^{n}}\dfrac{1}{2}\sum_{i=1}^{k}\sum^{n}_{u=1}\sum^{n}_{v=1}\right(\ln(W_{uv}^{i}-\ln\left(\frac{x_{u}}{x_{v}}\right))\left)^{2}
+\end{equation*}
+\end{center}
+\begin{center}
+Ai fini pratici del calcolo, il problema viene riformulato in modo diverso utilizzando le matrici laplaciane: in questo modo il vincolo delle soluzioni positive può essere rilassato semplificandone la soluzione. 
+\end{center}
+\end{frame}
+
+\begin{frame}{Metodologia SHAP\cite{reportindustria,oliva2017sparse}} 
+\begin{center}
+Il problema diventa quindi 
+\end{center}
+\begin{center}
+\begin{equation*}
+\text{arg \textit{min}}_{x\in \mathbb{R}_{+}^{n}}\dfrac{1}{2}\sum_{i=1}^{k}\sum^{n}_{u=1}\sum^{n}_{v=1}\right(\ln(W_{uv}^{i}-\ln\left(\frac{x_{u}}{x_{v}}\right))\left)^{2}
+\end{equation*}
+\end{center}
+\begin{center}
+Ai fini pratici del calcolo, il problema viene riformulato in modo diverso utilizzando le matrici laplaciane: in questo modo il vincolo delle soluzioni positive può essere rilassato semplificandone la soluzione. 
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Australian approach  \cite{australian}}
+\begin{center}
+\includegraphics[width=\linewidth]{Pic/Cover_australian.png}\\
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}{Australian approach  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Concetto chiave: Maturity level (from 0, the lowest, to 3, the higher) 
+\item Qualità delle evidenze 
+\begin{itemize}
+\item Excellent: \textit{vengono utilizzate delle simulazioni }
+\item Good: \textit{analisi della configurazione tramite l'interfaccia}
+\item Fair: \textit{analisi della configurazione tramite una copia} 
+\item Poor: \textit{una policy o una dichiarazione verbale}
+\end{itemize}
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Fasi di una valutazione  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Stage 1: pianificazione e preparazione
+\item Stage 2: determinazione dello scopo e del metodo
+\item Stage 3: valutaizone dei controlli
+\item Stage 4: emissione del report
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Stage 1: pianificazione e preparazione \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item classificazione del sistema
+\item accesso a tutti gli account, dispositivi e documentazione
+\item discussione con le parti interessate
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Stage 2: determinazione dello scopo e del metodo  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Discutere con il proprietario del sistema del livello di maturità d'interesse 
+\item Discussione dei metodo con cui viene condotta la valutazione. I report, le interviste e gli screenshot sono da considerarsi sempre di classe inferiore rispetto all'utilizzo di script e tool
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Stage 3: valutazione delle misure di controllo  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Viene effettuata una valutazione della mitigation strategy valutando la sicurezza dei controlli 
+\item L'approccio è cumulativo: il secondo livello estende il primo, e il terzo estende il secondo 
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Tipo di attaccante   \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1: attaccante che usa bug noti, password rubate o brute force. Non cerca una vittima, ma attacca gruppi. Poco social engineering. Utilizza macro office. Parte da un account compromesso per la sua azione 
+\item Livello 2: l'attaccante è disposto a investire una maggiore quantità di tempo. Viene usato il phishing e il social engineering in modo maggiore 
+\item Livello 3: l'attaccante cerca una vulnerabilità, si focalizza su alcuni obiettivi e può distruggere i dati
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Ambiti controllati  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Application control 
+\item Patch Application 
+\item Configure Microsoft Office macro settings 
+\item User application hardening 
+\item Restrict adiministrative privileges 
+\item Patch operating systems 
+\item Multi-factor authentication 
+\item Application control 
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Application control \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1: il lancio di eseguibili, software, librerie, script installer HTML compilati e applicativi HTML è impedita sulle workstation per gli suer standard e dalle directory temporanee usate dal sistema operativo 
+\item Livello 2: il controllo delle applicazioni viene implementato sulle workstation e i servizi che si connettono ai server internet facing. L'esecuzione di quanto citato sopra è permesso è soggetto ad approvazione 
+\item Livello 3: Al controllo delle applicazioni si aggiungono i server. Alla casistica precedente si aggiungono i driver 
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Patch application \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1:  Utilizzo di un vulnerability scanner ogni 15 giorni. Verifica automatica del rilascio degli aggiornamenti. Rimozione di browser, PDF non più aggiornati  
+\item Livello 2: Maggiore frequenza delle procedure del punto precedente
+\item Livello 3: Maggiore frequenza del punto precedente, tutte le applicazioni non più supportate dal fornitore sono rimosse 
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Configurazione di Microsoft office \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1:  Disabilitazione delle macro per gli user che non hanno necessità di business; le macro dei file che si ottengono da internet sono bloccate; attivazione dell'antivirus per le macro di office; la configurazione di office non può essere modificata dagli utenti
+\item Livello 2: le macro di office non possono chiamare Win32
+API 
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Configurazione di Microsoft office \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 3: le macro vanno eseguite in sandbox, solo utenti privligiati possono far si che le macro agiscano su trusted locations. Le macro firmate da autori sconosciuti non possono essere attivate da Message Bar o Backstage View. Aggiornamento annuale dei publisher fidati aggiornato. Log degli eventi (immodificabile)
+
+
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{User application hardening \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1: Viene impedita l'esecuzione di Java da web browser, explorer 11 non processa informazioni da internet e risulta impossibile modificare le impostazioni
+\item Livello 2: Microsoft office e PDF non può creare processi child, eseguibil, iniezione di codice in altre app. Le impostazioni non possono essere modificate. I powershell bloccati sono loggati
+\item Livello 3 Explorer 11, .NET 3.5 sono disabilitati o rimossi, power shell 2.0 bloccato o rimosso, log degli script di power shell. Log immodificabili e non rimuovibili  
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Restrict adiministrative privileges  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1: richiesta di privilegi quando l'applicazione vorrebbe utilizzarli, gli account privilegiati non possono connettersi a internet e relativi servizi, gli ambienti di utilizzo sono divisi fra user e privilegized user 
+\item Livello 2: gli account privilegiati vanno riconvalidati ogni 12 mesi, sono disabilitati dopo 45 gg di inattività. Gli ambienti di utilizzo per gli user privilegiati non vengono virtualizzati dagli ambienti non privilegiati; password admin robuste; l'accesso degli account privilegiati è registrato
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Restrict adiministrative privileges  \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 3: Gli account privilegiati possono accedere solo agli app richiesti; attivazione di windows defender creditial guard e remote credential; gli accessi privilegiati sono loggati a livello centrale
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Patch operating systems
+ \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1: Scansione automatica vulnearbilità, gestione automatica, installazione entro 48h se viene segnalata una vulnearabilità, i restati aggiornamenti entro un mese. Rimpiazzo dei OS non più supportati
+\item Livello 2: maggior freeuwnza di scansione, e applicazione entro due settimane degli aggiornamenti 
+\item Livello 3: Utilizzo dell'ultimo OS
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}{Multi-factor authentication
+ \cite{australian}}
+\begin{center}
+\begin{itemize}
+\item Livello 1: MFA se i servizi si interfacciano con internet, o vi sono servizi di terze parti e user non dell'organizazione 
+\item Livello 2: utilizzo MFA per account privilegiati, \textit{something users have and something users know, or something users have that is unlocked by something users know or are.}, Log delle autenticazioni (andate a buon fine o no)
+\item Livello 3: MFA per accesso a dati importanti, 
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}[t,allowframebreaks]
+\frametitle{Bibliography}
+\printbibliography
+\end{frame}
+
+
+
+
+
+\end{document}
