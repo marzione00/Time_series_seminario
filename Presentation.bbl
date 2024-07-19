@@ -44,5 +44,39 @@
     \field{title}{Introduction to time series and forecasting}
     \field{year}{2002}
   \endentry
+
+  \entry{hao2024improving}{article}{}
+    \name{author}{2}{}{%
+      {{hash=HJ}{%
+         family={Hao},
+         familyi={H\bibinitperiod},
+         given={Jianhua},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Fangai},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Publishing Group UK London}%
+    }
+    \strng{namehash}{HJLF1}
+    \strng{fullhash}{HJLF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{1}
+    \field{pages}{1689}
+    \field{title}{Improving long-term multivariate time series forecasting with
+  a seasonal-trend decomposition-based 2-dimensional temporal convolution dense
+  network}
+    \field{volume}{14}
+    \field{journaltitle}{Scientific Reports}
+    \field{year}{2024}
+  \endentry
 \enddatalist
 \endinput

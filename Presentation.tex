@@ -77,6 +77,76 @@ At lag h the autocorrelation function is defined as $\rho(h)_{X}=\dfrac{\gamma_{
 \end{alertblock}
 \end{frame}
 
+\begin{frame}{Stationarity, autocovariance and autocorrelation \cite{brockwell2002introduction}}
+    \begin{center}
+     \includegraphics[width=0.6\textwidth]{Pic/ACF.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Stationarity, autocovariance and autocorrelation \cite{hao2024improving}}
+    \begin{center}
+     \includegraphics[width=\textwidth]{Pic/Destagionalizzazione.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Definition \cite{brockwell2002introduction}}
+\begin{alertblock}{Linear process}
+Time series ${X}_{t}$ is a linear process if it has the representation
+\begin{equation*}
+X_{t}=\sum_{j=-\infty}^{\infty}\psi_{j}Z_{t-j}
+\end{equation*}
+for all t, where ${Z_{t}}\approx \textrm{WN}(0,\sigma^{2})$ and ${\psi_{j}}$ is a sequence of costants with $\sum_{j=-\infty}^{\infty}\psi_{j} < \infty $. In terms of backward shift operator B $BX_{t}=X_{t-1}$ we have $X_{t}=\phi(B)Z_{t}$ Therefore the previous definition can be casted as $X_{t}=\phi(B)Z_{t}$ in which $\phi(B)$ can be thought as a linear filter that when applied to the white noise input series ${Z_{t}}$ produces the output ${X_{t}}$
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Definition \cite{brockwell2002introduction}}
+\begin{alertblock}{Linear process}
+The time series ${X_{t}}$ is an ARMA(1,1) process if its stationary and satisfiy (for every t) 
+\begin{equation*}
+X_{t}-\phi X_{t-1}=Z_{t}+\phi Z_{t-1}
+\end{equation*}
+where $Z_{t} \approx \textrm{WN}(0,\phi^{2})$ and $\phi+\theta \neq 0 $
+or in terms of filters $\phi$ and $\theta$
+\begin{equation*}
+\phi(B)X_{t}=\theta(B)Z_{t}
+\end{equation*}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Causality \cite{brockwell2002introduction}}
+\begin{block}{Remarks}
+\begin{itemize}
+\item A stationary solution of the ARMA(1,1) equation exists if and only if $\phi \neq \pm 1$
+\item If $|\phi| < 1$, then the unique stationary solution is given by $X_{t}=Z_{t}+(\phi+\theta)\sum^{\infty}_{j=1}\phi^{j-1}Z_{t-j}$. In this case we say that $X_{t}$ is causal or a causal function of ${Z_{t}}$ or a causal function of ${Z_{t}}$ since $X_{t}$ can be espressd in terms of the current and past values $Z_{s}$, $s\leq t$
+\item If $|\phi| >1$, then the unique stationary solution is given by $X_{t}=-\theta\phi^{-1}Z_{t}-(\phi+\theta)\sum^{\infty}_{j=1}\phi^{-j-1}Z_{t-j}$. The solution is noncausal, since $X_{t}$ is then a functional of $Z_{s}$ $s\geq t$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Wold decomposition \cite{brockwell2002introduction}}
+\begin{block}{Prediction operator based on the infinite past $X_{t},-\infty < t < n$}
+$\tilde{P}_{n}X_{n+h}=\lim_{m\rightarrow - \infty} P_{m,n}X_{n+h}$
+\end{block}
+\begin{block}{Wold decomposition $X_{t},-\infty < t < n$}
+$X_{t}$ is a non-deterministic stationary time series, then
+\begin{equation*}
+X_{t}=\sum^{\infty}_{j=0}\psi_{j}Z_{t-j}+V_{t}
+\end{equation*}
+where ${V_{t}}$ is deterministic
+\end{block}
+\end{frame}
+
+
+
+
+\begin{frame}{Definition \cite{brockwell2002introduction}}
+
+\end{frame}
+
+
+
+
 %\begin{frame}{Interpretabilità per le reti neurali \cite{xai_ff}}
 %    \begin{center}
 %     \includegraphics[width=0.6\textwidth]{Pic/XAI_nn.png}

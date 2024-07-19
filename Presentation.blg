@@ -22,54 +22,47 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Presentation-blx.bib
 Database file #2: bibliography.bib
-Warning--I didn't find a database entry for "xai_ff"
-Warning--I didn't find a database entry for "mokuwe2020black"
-Warning--I didn't find a database entry for "guidotti2022text"
-Warning--I didn't find a database entry for "count"
-Warning--I didn't find a database entry for "ribeiro2016should"
-Warning--I didn't find a database entry for "xai"
 Biblatex version: 3.19
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 2 entries,
+You've used 3 entries,
             6399 wiz_defined-function locations,
-            1214 strings with 9177 characters,
-and the built_in function-call counts, 10038 in all, are:
-= -- 779
-> -- 188
-< -- 39
-+ -- 242
-- -- 71
-* -- 695
-:= -- 1289
+            1216 strings with 9367 characters,
+and the built_in function-call counts, 17262 in all, are:
+= -- 1338
+> -- 331
+< -- 100
++ -- 456
+- -- 114
+* -- 1137
+:= -- 1987
 add.period$ -- 0
-call.type$ -- 2
-change.case$ -- 18
+call.type$ -- 3
+change.case$ -- 62
 chr.to.int$ -- 42
-cite$ -- 2
-duplicate$ -- 749
-empty$ -- 883
-format.name$ -- 68
-if$ -- 2101
+cite$ -- 4
+duplicate$ -- 1574
+empty$ -- 1480
+format.name$ -- 136
+if$ -- 3625
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 6
 missing$ -- 0
-newline$ -- 48
-num.names$ -- 52
-pop$ -- 402
+newline$ -- 80
+num.names$ -- 129
+pop$ -- 747
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 72
 quote$ -- 0
-skip$ -- 280
+skip$ -- 559
 stack$ -- 0
-substring$ -- 1611
-swap$ -- 141
-text.length$ -- 51
-text.prefix$ -- 1
+substring$ -- 2457
+swap$ -- 328
+text.length$ -- 80
+text.prefix$ -- 2
 top$ -- 1
-type$ -- 56
+type$ -- 90
 warning$ -- 0
-while$ -- 153
+while$ -- 243
 width$ -- 0
-write$ -- 47
-(There were 6 warnings)
+write$ -- 78

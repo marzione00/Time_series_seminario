@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  19 JUL 2024 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  19 JUL 2024 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2136,7 +2136,34 @@ Overfull \vbox (9.46008pt too high) detected at line 78
 
 [3
 
-] [4
+]
+<Pic/ACF.png, id=170, 604.50844pt x 587.19376pt>
+File: Pic/ACF.png Graphic file (type png)
+<use Pic/ACF.png>
+Package pdftex.def Info: Pic/ACF.png  used on input line 84.
+(pdftex.def)             Requested size: 205.37926pt x 199.49092pt.
+ [4
+
+ <./Pic/ACF.png>]
+<Pic/Destagionalizzazione.png, id=181, 1510.89468pt x 651.18282pt>
+File: Pic/Destagionalizzazione.png Graphic file (type png)
+<use Pic/Destagionalizzazione.png>
+Package pdftex.def Info: Pic/Destagionalizzazione.png  used on input line 90.
+(pdftex.def)             Requested size: 342.2953pt x 147.5233pt.
+ [5
+
+ <./Pic/Destagionalizzazione.png>] [6
+
+] [7
+
+] [8
+
+]
+[9
+
+] [10
+
+] [11
 
 ]
 \tf@nav=\write8
@@ -2164,24 +2191,28 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40752 strings out of 474462
- 809474 string characters out of 5752662
+ 40913 strings out of 474462
+ 813612 string characters out of 5752662
  1943998 words of memory out of 5000000
- 62270 multiletter control sequences out of 15000+600000
- 572003 words of font info for 88 fonts, out of 8000000 for 9000
+ 62412 multiletter control sequences out of 15000+600000
+ 575921 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,1883b,2609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/euex10.pfb>
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb>
-Output written on Presentation.pdf (4 pages, 137340 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
+si12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/euler/euex10.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/amsfonts/euler/euex8.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/euler/eurm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
+/euler/eusm10.pfb>
+Output written on Presentation.pdf (11 pages, 904196 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 404 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 606 words of extra memory for PDF output out of 10000 (max. 10000000)
 
