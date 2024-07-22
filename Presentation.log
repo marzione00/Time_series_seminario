@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  19 JUL 2024 15:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  22 JUL 2024 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2165,6 +2165,46 @@ Package pdftex.def Info: Pic/Destagionalizzazione.png  used on input line 90.
 
 ] [11
 
+] [12
+
+] [13
+
+]
+<Pic/spectral_distribution.png, id=374, 640.64343pt x 660.21657pt>
+File: Pic/spectral_distribution.png Graphic file (type png)
+<use Pic/spectral_distribution.png>
+Package pdftex.def Info: Pic/spectral_distribution.png  used on input line 195.
+
+(pdftex.def)             Requested size: 205.37926pt x 211.64635pt.
+ [14
+
+ <./Pic/spectral_distribution.png>] [15
+
+] [16
+
+]
+<Pic/D_MA.png, id=448, 736.25063pt x 425.33907pt>
+File: Pic/D_MA.png Graphic file (type png)
+<use Pic/D_MA.png>
+Package pdftex.def Info: Pic/D_MA.png  used on input line 239.
+(pdftex.def)             Requested size: 205.37926pt x 118.6463pt.
+
+[17
+
+ <./Pic/D_MA.png>]
+<Pic/gibbs_ph.png, id=470, 755.82375pt x 398.23781pt>
+File: Pic/gibbs_ph.png Graphic file (type png)
+<use Pic/gibbs_ph.png>
+Package pdftex.def Info: Pic/gibbs_ph.png  used on input line 248.
+(pdftex.def)             Requested size: 342.2953pt x 180.35384pt.
+
+Overfull \vbox (0.92216pt too high) detected at line 248
+ []
+
+[18
+
+ <./Pic/gibbs_ph.png>] [19
+
 ]
 \tf@nav=\write8
 \openout8 = `Presentation.nav'.
@@ -2191,10 +2231,10 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40913 strings out of 474462
- 813612 string characters out of 5752662
+ 41020 strings out of 474462
+ 816817 string characters out of 5752662
  1943998 words of memory out of 5000000
- 62412 multiletter control sequences out of 15000+600000
+ 62503 multiletter control sequences out of 15000+600000
  575921 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,1883b,2609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2210,9 +2250,9 @@ es/MiKTeX/fonts/type1/public/amsfonts/euler/euex10.pfb><C:/Program Files/MiKTeX
 e1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/euler/eurm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
 /euler/eusm10.pfb>
-Output written on Presentation.pdf (11 pages, 904196 bytes).
+Output written on Presentation.pdf (19 pages, 1087517 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 606 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 555 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 945 words of extra memory for PDF output out of 10000 (max. 10000000)
 

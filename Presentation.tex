@@ -137,21 +137,115 @@ where ${V_{t}}$ is deterministic
 \end{block}
 \end{frame}
 
-
-
+\begin{frame}{Definition \cite{brockwell2002introduction}}
+\begin{alertblock}{ARMA (p,q)}
+${X_{t}}$ is an ARMA(p,q) process if ${X_{t}}$ is stationary and if for every t, 
+\begin{equation*}
+X_{t}-\phi_{1} X_{t-1}-...-\phi_{1} X_{t-q}-=Z_{t}+\phi Z_{t}+\phi_{1}Z_{t-1}+...+\theta_{q}Z_{t-q}
+\end{equation*}
+where ${Z_{t}} \approx WN(0,\sigma^{2})$ and the polynomials $\left(1-\phi_{1}z-...-\phi_{p}z^{p}\right)$ and $\left(1+\phi_{1}z+...+\phi_{p}z^{p}\right)$ have no common factor. 
+\end{alertblock}
+\end{frame}
 
 \begin{frame}{Definition \cite{brockwell2002introduction}}
-
+\begin{alertblock}{Causality}
+An ARMA(p,q) process ${X_{t}}$ is causal, or a causal function of ${Z_{t}}$ if there exist constants  ${\phi_{j}}$ such that $\sum_{j=0}^{\infty}|\phi_{j}|< \infty$ and
+\begin{equation*}
+X_{t}=\sum^{\infty}_{j=0}\sum\phi_{j}Z_{t-j}\quad\forall\quad t
+\end{equation*}
+this is equivalent to the condition 
+\begin{equation*}
+\phi(z)=1-\phi_{1}z-...-\phi_{p}z^{p}\neq \quad|z|<1
+\end{equation*}
+\end{alertblock}
 \end{frame}
 
 
 
+\begin{frame}{Spectral Analysis \cite{brockwell2002introduction}}
+\begin{alertblock}{Spectral density}
+Given a zero mean stationary time series ${X_{t}}$ with autocovariance function $\gamma()$ satfying $\sum_{h=-\infty}|\gamma(h)|<\infty$, the spectral density of ${X_{t}}$ is the function defined by
+\begin{equation*}
+f(\lambda)=\dfrac{1}{2\pi}\sum e^{-ih\lambda}\gamma(h)\quad -\infty<\lambda<\infty
+\end{equation*}
+with the condition that 
+\begin{equation*}
+f(\lambda)\geq 0 \quad\forall \lambda
+\end{equation*}
+\begin{equation*}
+\gamma(h)=\int^{\pi}_{-\pi}e^{ih\lambda}f(\lambda)d\lambda\forall h
+\end{equation*}
+\end{alertblock}
+\end{frame}
 
-%\begin{frame}{Interpretabilità per le reti neurali \cite{xai_ff}}
-%    \begin{center}
-%     \includegraphics[width=0.6\textwidth]{Pic/XAI_nn.png}
-%     \end{center}
-%\end{frame}
+\begin{frame}{Spectral Analysis \cite{brockwell2002introduction}}
+\begin{alertblock}{Spectral Representation of The ACVF}
+A function $\gamma()$ defined on the integers is the ACVF of a stationary time series if and only if there exists a right-continuous, non-decresing, bounded function F on $[-\pi,\pi]$ with $F(-\pi)=0$ such that:
+\begin{equation*}
+\gamma(h)=\int_{(-\pi,\pi]}e^{ih\lambda}dF(\lambda)
+\end{equation*}
+for all integers h. F is a genralized distribution function that is called the spectral distribution function of  $\gamma()$
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Spectral Analysis \cite{brockwell2002introduction}}
+    \begin{center}
+     \includegraphics[width=0.6\textwidth]{Pic/spectral_distribution.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}{Time-Invariant Linear Filters \cite{brockwell2002introduction}}
+\begin{alertblock}{Linear process}
+The process ${Y_{t}}$ is the output of a linear filter $C=\left\lbrace c_{t,k},t,k=0\pm1,...\right\rbrace$  applied to an input process ${X_{t}}$ if $Y_{t}=\sum^{\infty}_{k=-\infty}c_{t,k}X_{k}\quad t=0,\pm 1,...$
+\end{alertblock}
+\begin{alertblock}{Time invariant}
+The filter is said to be time-invariant if the weights $c_{t,t-k}$ are indipendent of t e.g. $c_{t,t-k}=\phi_{k}$
+\begin{equation*}
+Y_{t}=\sum^{\infty}_{k=-\infty}\phi_{t,k}X_{t-k}
+\end{equation*}
+\begin{equation*}
+Y_{t-s}=\sum^{\infty}_{k=-\infty}\phi_{t,k}X_{t-s-k}
+\end{equation*}
+The TLF $\phi$ is to be causal if $\phi_{j}=0$ for $j<0$
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Time-Invariant Linear Filters \cite{brockwell2002introduction}}
+\begin{alertblock}{Transfer function}
+Let ${X_{t}}$ be a stationary time series with mean zero and spectral density $f_{x}(\lambda)$. Suppose that $\Phi=\left\lbrace \phi_{j},j=0,\pm 1,... \right\rbrace$ is an absolutely summable TLF. Then the time series 
+\begin{equation*}
+Y_{t}=\sum_{j=-\infty}^{\infty}\phi_{j}X_{t-j}
+\end{equation*}
+is stationary with mean zero and spectral density 
+\begin{equation*}
+f_{Y}(\lambda)=|\Psi(e^{-i\lambda})|^{2}f_{X}(\lambda)=\Psi(e^{-i\lambda})\Psi(e^{i\lambda})f_{X}(\lambda)
+\end{equation*}
+where $\Psi(e^{-i\lambda})=\sum^{\infty}_{j=-\infty}\phi_{j}e^{-ij\lambda}$ where  $\Psi(e^{-i})$ is called the transfer function of the filter, and the squared modulus $|\Psi(e^{-i})|$ is referred to as the power transfer function of the filter. 
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Time-Invariant Linear Filters \cite{brockwell2002introduction}}
+\begin{exampleblock}{Simple moving average}
+\begin{equation*}
+Y_{t}=\dfrac{1}{2q+1}\sum_{|j|<q}X_{t-j}
+\end{equation*}
+where $\psi=(2q+1)^{-1},j=-q,...,q$ and $\psi_{j}$
+\end{exampleblock}
+    \begin{center}
+     \includegraphics[width=0.6\textwidth]{Pic/D_MA.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Time-Invariant Linear Filters \cite{brockwell2002introduction}}
+\begin{exampleblock}{Gibbs phenomenon}
+The poor approximation in the neighborhood of cut-off frequency $(\omega_{c})$ 
+\end{exampleblock}
+    \begin{center}
+     \includegraphics[width=\textwidth]{Pic/gibbs_ph.png}
+    \end{center}
+\end{frame}
 
 
 
