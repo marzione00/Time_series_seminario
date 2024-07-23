@@ -49,6 +49,28 @@
     \field{year}{2002}
   \endentry
 
+  \entry{hamilton2020time}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HJD}{%
+         family={Hamilton},
+         familyi={H\bibinitperiod},
+         given={James\bibnamedelima D},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton university press}%
+    }
+    \strng{namehash}{HJD1}
+    \strng{fullhash}{HJD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Time series analysis}
+    \field{year}{2020}
+  \endentry
+
   \entry{hao2024improving}{article}{}
     \name{author}{2}{}{%
       {{hash=HJ}{%
@@ -81,6 +103,31 @@
     \field{volume}{14}
     \field{journaltitle}{Scientific Reports}
     \field{year}{2024}
+  \endentry
+
+  \entry{pml2Book}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MKP}{%
+         family={Murphy},
+         familyi={M\bibinitperiod},
+         given={Kevin\bibnamedelima P.},
+         giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{MKP1}
+    \strng{fullhash}{MKP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Probabilistic Machine Learning: Advanced Topics}
+    \verb{url}
+    \verb http://probml.github.io/book2
+    \endverb
+    \field{year}{2023}
   \endentry
 \enddatalist
 \endinput

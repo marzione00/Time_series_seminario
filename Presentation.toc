@@ -5,3 +5,4 @@
 \beamer@sectionintoc {3}{Estimation}{21}{0}{3}
 \beamer@sectionintoc {4}{Nonstationary time series}{25}{0}{4}
 \beamer@sectionintoc {5}{Multivariate time series}{28}{0}{5}
+\beamer@sectionintoc {6}{State-space models}{32}{0}{6}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  23 JUL 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  23 JUL 2024 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2070,7 +2070,7 @@ italian.ldf    on input line 42.
 Overfull \vbox (72.23634pt too high) detected at line 46
  []
 
-<Pic/Cover_image.png, id=53, 603.25375pt x 448.67625pt>
+<Pic/Cover_image.png, id=57, 603.25375pt x 448.67625pt>
 File: Pic/Cover_image.png Graphic file (type png)
 <use Pic/Cover_image.png>
 Package pdftex.def Info: Pic/Cover_image.png  used on input line 46.
@@ -2138,7 +2138,7 @@ Overfull \vbox (9.46008pt too high) detected at line 89
 [4
 
 ]
-<Pic/ACF.png, id=198, 604.50844pt x 587.19376pt>
+<Pic/ACF.png, id=202, 604.50844pt x 587.19376pt>
 File: Pic/ACF.png Graphic file (type png)
 <use Pic/ACF.png>
 Package pdftex.def Info: Pic/ACF.png  used on input line 95.
@@ -2146,7 +2146,7 @@ Package pdftex.def Info: Pic/ACF.png  used on input line 95.
  [5
 
  <./Pic/ACF.png>]
-<Pic/Destagionalizzazione.png, id=209, 1510.89468pt x 651.18282pt>
+<Pic/Destagionalizzazione.png, id=213, 1510.89468pt x 651.18282pt>
 File: Pic/Destagionalizzazione.png Graphic file (type png)
 <use Pic/Destagionalizzazione.png>
 Package pdftex.def Info: Pic/Destagionalizzazione.png  used on input line 101.
@@ -2173,7 +2173,7 @@ Package pdftex.def Info: Pic/Destagionalizzazione.png  used on input line 101.
 ] [15
 
 ]
-<Pic/spectral_distribution.png, id=409, 640.64343pt x 660.21657pt>
+<Pic/spectral_distribution.png, id=413, 640.64343pt x 660.21657pt>
 File: Pic/spectral_distribution.png Graphic file (type png)
 <use Pic/spectral_distribution.png>
 Package pdftex.def Info: Pic/spectral_distribution.png  used on input line 216.
@@ -2187,7 +2187,7 @@ Package pdftex.def Info: Pic/spectral_distribution.png  used on input line 216.
 [18
 
 ]
-<Pic/D_MA.png, id=483, 736.25063pt x 425.33907pt>
+<Pic/D_MA.png, id=487, 736.25063pt x 425.33907pt>
 File: Pic/D_MA.png Graphic file (type png)
 <use Pic/D_MA.png>
 Package pdftex.def Info: Pic/D_MA.png  used on input line 260.
@@ -2195,7 +2195,7 @@ Package pdftex.def Info: Pic/D_MA.png  used on input line 260.
  [19
 
  <./Pic/D_MA.png>]
-<Pic/gibbs_ph.png, id=506, 755.82375pt x 398.23781pt>
+<Pic/gibbs_ph.png, id=510, 755.82375pt x 398.23781pt>
 File: Pic/gibbs_ph.png Graphic file (type png)
 <use Pic/gibbs_ph.png>
 Package pdftex.def Info: Pic/gibbs_ph.png  used on input line 269.
@@ -2213,7 +2213,7 @@ Overfull \vbox (0.92216pt too high) detected at line 269
 ] [23
 
 ]
-<Pic/Residuals.png, id=591, 536.75531pt x 300.3722pt>
+<Pic/Residuals.png, id=595, 536.75531pt x 300.3722pt>
 File: Pic/Residuals.png Graphic file (type png)
 <use Pic/Residuals.png>
 Package pdftex.def Info: Pic/Residuals.png  used on input line 328.
@@ -2223,7 +2223,7 @@ Package pdftex.def Info: Pic/Residuals.png  used on input line 328.
  <./Pic/Residuals.png>] [25
 
 ]
-<Pic/unit_root_ts.png, id=609, 1120.185pt x 738.76pt>
+<Pic/unit_root_ts.png, id=613, 1120.185pt x 738.76pt>
 File: Pic/unit_root_ts.png Graphic file (type png)
 <use Pic/unit_root_ts.png>
 Package pdftex.def Info: Pic/unit_root_ts.png  used on input line 342.
@@ -2249,25 +2249,64 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 (Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 370.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.370 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.370 \end{frame}
-                 
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 [29
 
-] [30
+]
+<Pic/granger.png, id=682, 797.22844pt x 436.63126pt>
+File: Pic/granger.png Graphic file (type png)
+<use Pic/granger.png>
+Package pdftex.def Info: Pic/granger.png  used on input line 386.
+(pdftex.def)             Requested size: 171.14764pt x 93.73398pt.
+ [30
+
+ <./Pic/granger.png>]
+<Pic/irf.png, id=705, 1010.27437pt x 261.22594pt>
+File: Pic/irf.png Graphic file (type png)
+<use Pic/irf.png>
+Package pdftex.def Info: Pic/irf.png  used on input line 395.
+(pdftex.def)             Requested size: 273.83728pt x 70.80696pt.
+ [31
+
+ <./Pic/irf.png>]
+<Pic/SSM.png, id=728, 578.16pt x 279.29344pt>
+File: Pic/SSM.png Graphic file (type png)
+<use Pic/SSM.png>
+Package pdftex.def Info: Pic/SSM.png  used on input line 406.
+(pdftex.def)             Requested size: 205.37926pt x 99.21165pt.
+ [32
+
+ <./Pic/SSM.png>]
+[33
+
+]
+<Pic/time_series_segmentation.png, id=784, 1050.17343pt x 845.40843pt>
+File: Pic/time_series_segmentation.png Graphic file (type png)
+<use Pic/time_series_segmentation.png>
+Package pdftex.def Info: Pic/time_series_segmentation.png  used on input line 4
+36.
+(pdftex.def)             Requested size: 171.14764pt x 137.77068pt.
+ [34
+
+ <./Pic/time_series_segmentation.png>]
+! Undefined control sequence.
+\beamer@doifinframe ...k)= Poi\left (y_{t}|\lamda 
+                                                  _{k}\right ) \end {equatio...
+l.453 \end{frame}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[35
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 460.
+
+[36
 
 ]
 \tf@nav=\write8
@@ -2288,48 +2327,44 @@ L3 programming layer <2024-02-13>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 316766FA29A711FCAF807C9B6B251BD8;355.
-
-Package biblatex Warning: Please rerun LaTeX.
-
+(rerunfilecheck)             Checksum: 8633038CDF0C19287CEDFA9D2FC94EAA;411.
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41224 strings out of 474462
- 820301 string characters out of 5752662
+ 41348 strings out of 474462
+ 823909 string characters out of 5752662
  1942998 words of memory out of 5000000
- 62656 multiletter control sequences out of 15000+600000
- 592560 words of font info for 159 fonts, out of 8000000 for 9000
+ 62764 multiletter control sequences out of 15000+600000
+ 592861 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,1883b,2609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,22n,123p,1883b,2609s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marzio.decorato00\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi657\ecso1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cme
-x10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Pro
-gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
-/amsfonts/euler/euex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
-/euler/euex8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/euf
-b10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><
-C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/euler/eusm10.pfb>
-Output written on Presentation.pdf (30 pages, 1245509 bytes).
+/dpi657\ecso1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmc
+sc10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmss17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmss8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/e
+uler/euex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/euex
+8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufb10.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program 
+Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/euler/eurb10.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/amsfonts/euler/eurm10.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/euler/eusm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb>
+Output written on Presentation.pdf (36 pages, 1645319 bytes).
 PDF statistics:
- 781 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 1205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 955 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
+ 1521 words of extra memory for PDF output out of 10000 (max. 10000000)
 

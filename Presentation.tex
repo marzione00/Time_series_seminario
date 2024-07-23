@@ -365,9 +365,93 @@ $\left\lbrace \textbf{X}_{t} \right\rbrace$ is an ARMA (p,q) process if $\left\l
 \begin{equation*}
 \bm{X}_{t}-\phi_{1}\bm{X}_{t-1}-...-\phi_{p}X_{t-p}=Z_{t}+\Theta_{1}Z_{t-1}+...+\Theta_{q}Z_{t-q}
 \end{equation*}
-where $Z_{t}\approx$ WN(0,\Sigma)
+where $Z_{t}\approx$ WN(0,$\Sigma$)
 \end{alertblock}
 \end{frame}
+
+\begin{frame}{Vector Autoregression \cite{hamilton2020time}}
+\begin{alertblock}{VAR(1)}
+\begin{equation*}
+\begin{pmatrix} y_{1,t} \\ y_{2,t} \end{pmatrix} = \begin{pmatrix} c_{1} \\ c_{2} \end{pmatrix} + \begin{pmatrix} a_{1,2}\quad a_{1,2} \\ a_{2,1} \quad a_{2,2} \end{pmatrix} \begin{pmatrix} y_{1,t-1} \\ y_{2,t-1} \end{pmatrix} +
+\begin{pmatrix} e_{1,t} \\ e_{2,t} \end{pmatrix}
+\end{equation*}
+\end{alertblock}
+
+\begin{alertblock}{Granger causality test (hamilton2020time)}
+$y_{2}$ cause (in Granger sense) $y_{1}$ if the coefficent $a_{1,2}$ is signficantly not equal to 0
+\begin{center}
+     \includegraphics[width=0.5\textwidth]{Pic/granger.png}
+    \end{center}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Vector Autoregression \cite{hamilton2020time}}
+\begin{alertblock}{Impulse response function}
+$y_{2}$ cause (in Granger sense) $y_{1}$ if the coefficent $a_{1,2}$ is signficantly not equal to 0
+\begin{center}
+     \includegraphics[width=0.8\textwidth]{Pic/irf.png}
+    \end{center}
+    \end{alertblock}
+\end{frame}
+
+\section{State-space models}
+
+\begin{frame}{Space State Models  \cite{pml2Book}}
+\begin{alertblock}{Definition}
+A state-space model (SSM) is a partially observed Markov model in which the hidden state $z_{t}$ evolves over time according to a Markov process and each hidden state generates some observations $y_{t}$ at each step. The main goal is to infer the hidden states given the observations (and also to predict the future observations)
+\begin{center}
+     \includegraphics[width=0.6\textwidth]{Pic/SSM.png}
+    \end{center}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Space State Models  \cite{pml2Book}}
+\begin{alertblock}{Non linear dynamical system}
+A state-space model (SSM) can be represented as a stochastic discrete time nonlinear dynamical system of the form 
+\begin{equation*}
+\begin{split}
+z &= f(\textbf{z}_{t-1},\textbf{u}_{t},\textbf{q}_{t}) \\
+y_{t} &= h(\textbf{z}_{t},\textbf{u}_{t},\textbf{y}_{1:t-1},\textbf{r}_{t})
+\end{split}
+\end{equation*}
+where $z_{t} \in 	\mathbb{R}^{N}$ are the hidden states, $\textbf{u}_{t}  \in 	\mathbb{R}^{N}$ are the optional observed inputs, $y\textbf{y}_{t}  \in 	\mathbb{R}^{N}$ are observed output and $\textbf{f}$ is the transition function, $\textbf{q}_{t}$ is the process noise, $\textbf{h}$ is the observation function and $\textbf{r}_{t}$ is the observation noise. The transition model and the observational model are 
+\begin{equation*}
+\begin{split}
+p(\textbf{z}_{t}|\textbf{z}_{t-1},\textbf{u}_{t})& = p(\textbf{z}_{t}|\textbf{f}(\textbf{z}_{t-1},\textbf{u}_{t}))\\
+p(\textbf{y}_{t}|\textbf{z}_{t},\textbf{u}_{t},\textbf{y}_{1:t-1})& =p(\textbf{y}_{t}|\textbf{h}(\textbf{z}_{t},\textbf{u}_{t},\textbf{y}_{1:t-1}))
+\end{split}
+\end{equation*}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Space State Models  \cite{pml2Book}}
+\begin{alertblock}{Non linear dynamical system}
+Hidden Markov Model (HMM) $\rightarrow$ a SSM in which the hidden states are discrete, thus $z_{t}\in {1,...,K}$
+\end{alertblock}
+\begin{exampleblock}{Time series segmentation}
+\begin{center}
+     \includegraphics[width=0.5\textwidth]{Pic/time_series_segmentation.png}
+    \end{center}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Space State Models  \cite{pml2Book}}
+\small
+\begin{exampleblock}{Time series segmentation}
+We want to segment a time series into different regimes, each of which correspond to a different statistical distribution. In particular we woul like to segment this data stream in to K different regimes or states, each of which is associated with a Poisson observation model with rate $\lambda_{k}$:
+\begin{equation*}
+p(y_{t}|z_{t}=k)= Poi\left(y_{t}|\lamda_{k}\right)
+\end{equation*}
+where a uniform prior over the initial states was considered. As the transition matrix, we assume that the Markov chain stays in the same state with probability p=0.95 and otherwise transitions to one of the other K-1 states unformely at random: 
+\begin{equation*}
+z_{1}\approx \textnormal{Categorical}\left( \left\lbrace \dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4}\right\rbrace \right)
+\end{equation*}
+\begin{equation*}
+z_{1}|z_{t-1}\approx \textnormal{Categorical}\left( \left\lbrace  \begin{pmatrix} p  \quad z_{t}=z_{t-1} \\ \dfrac{1-p}{4-1}  \quad \textnormal{else}  \end{pmatrix}  \right\rbrace \right)
+\end{equation*}
+\end{exampleblock}
+\end{frame}
+
 
 
 \begin{frame}[noframenumbering,t,allowframebreaks]
