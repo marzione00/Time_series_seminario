@@ -18,6 +18,7 @@
 \usepackage{listings}
 \usepackage{euler}
 \usepackage{tikz}
+\usepackage{bm}
 \usetikzlibrary{bayesnet}
 \usetikzlibrary{arrows}
 \usepackage{bbm}
@@ -46,18 +47,28 @@
 
 \usebackgroundtemplate{ } 
 
+\section{Preliminary definitions}
+
+
+\begin{frame}
+\begin{center}
+\Huge
+Preliminary definitions
+\end{center}
+\end{frame}
+
 \begin{frame}{Time series definition \cite{brockwell2002introduction}}
 \begin{alertblock}{Informal definition}
 A time-series is a set of observation $x_{t}$ each one being recorder at a specific time t. 
 \end{alertblock}
 \begin{alertblock}{Formal definition }
-A time series model for the observed data ${x}_{t}$ is a specification of the joint distribution (or possibile only the mens covariance) of a sequence of random variable ${X}_{t}$ of which ${x}_{t}$ is postulated to be a realization
+A time series model for the observed data ${x}_{t}$ is a specification of the joint distribution (or possible only the means covariance) of a sequence of random variable ${X}_{t}$ of which ${x}_{t}$ is postulated to be a realization
 \end{alertblock}
 \begin{exampleblock}{A binary process}
 Consider the sequence of iid random variables, with $P[X_{t}=1]=p$ and $P[X_{t}=-1]=1-p$
 \end{exampleblock}
 \begin{exampleblock}{Random walk}
-The random walk is obtained by cumulatevely summing iid random variables. Thus a random walk with zero mean is obtained by defining $S_{0}=0$ and $S_{t}=X_{1}+X_{2}+...+X_{t}$ for $t=1,2,..$ where ${X_{t}}$ a iid noise. 
+The random walk is obtained by cumulatively summing iid random variables. Thus a random walk with zero mean is obtained by defining $S_{0}=0$ and $S_{t}=X_{1}+X_{2}+...+X_{t}$ for $t=1,2,..$ where ${X_{t}}$ a iid noise. 
 \end{exampleblock}
 \end{frame}
 
@@ -67,12 +78,12 @@ The random walk is obtained by cumulatevely summing iid random variables. Thus a
 Let ${X_{t}}$ be a time series with $E({x}_{t}^{2}< \infty$  The mean function of ${X_{t}}$ is $\mu_{X}(t)=E(X_{t})$. The covariance function of ${X_{t}}$ is $\gamma_{X}(r,s)=Cov(X_{r},X_{S})=E[(X_{r}-\mu_{X}(r))(X_{s}-\mu_{X}(s))]\quad\forall r,s$ 
 \end{alertblock}
 \begin{alertblock}{Weakly stationary TS}
-${X_{t}}$ is weakly stationary if i) $\mu_{X}(t)$ is indipendent from time t and ii) $\gamma_{X}(t+h)$ is indipendent of t $\forall h$
+${X_{t}}$ is weakly stationary if i) $\mu_{X}(t)$ is independent from time t and ii) $\gamma_{X}(t+h)$ is indipendent of t $\forall h$
 \end{alertblock}
 \begin{alertblock}{Autocovariance function}
-At lag h the autocovariance function is defined as $\gamma_{X}(h)=Cov(X_{t+h},X_{t})$ 
+At lag h the auto-covariance function is defined as $\gamma_{X}(h)=Cov(X_{t+h},X_{t})$ 
 \end{alertblock}
-\begin{alertblock}{Autocorellation function}
+\begin{alertblock}{Autocorrelation function}
 At lag h the autocorrelation function is defined as $\rho(h)_{X}=\dfrac{\gamma_{X}(h)}{\gamma_{X}(0)}=Cor({X}_{t+h},{X}_{t})$ 
 \end{alertblock}
 \end{frame}
@@ -95,7 +106,7 @@ Time series ${X}_{t}$ is a linear process if it has the representation
 \begin{equation*}
 X_{t}=\sum_{j=-\infty}^{\infty}\psi_{j}Z_{t-j}
 \end{equation*}
-for all t, where ${Z_{t}}\approx \textrm{WN}(0,\sigma^{2})$ and ${\psi_{j}}$ is a sequence of costants with $\sum_{j=-\infty}^{\infty}\psi_{j} < \infty $. In terms of backward shift operator B $BX_{t}=X_{t-1}$ we have $X_{t}=\phi(B)Z_{t}$ Therefore the previous definition can be casted as $X_{t}=\phi(B)Z_{t}$ in which $\phi(B)$ can be thought as a linear filter that when applied to the white noise input series ${Z_{t}}$ produces the output ${X_{t}}$
+for all t, where ${Z_{t}}\approx \textrm{WN}(0,\sigma^{2})$ and ${\psi_{j}}$ is a sequence of costants with $\sum_{j=-\infty}^{\infty}\psi_{j} < \infty $. In terms of backward shift operator B $BX_{t}=X_{t-1}$ we have $X_{t}=\phi(B)Z_{t}$ Therefore the previous definition can be rewritten as $X_{t}=\phi(B)Z_{t}$ in which $\phi(B)$ can be thought as a linear filter that when applied to the white noise input series ${Z_{t}}$ produces the output ${X_{t}}$
 \end{alertblock}
 \end{frame}
 
@@ -104,7 +115,7 @@ for all t, where ${Z_{t}}\approx \textrm{WN}(0,\sigma^{2})$ and ${\psi_{j}}$ is 
 \begin{alertblock}{Linear process}
 The time series ${X_{t}}$ is an ARMA(1,1) process if its stationary and satisfiy (for every t) 
 \begin{equation*}
-X_{t}-\phi X_{t-1}=Z_{t}+\phi Z_{t-1}
+X_{t}-\phi X_{t-1}=Z_{t}+\theta Z_{t-1}
 \end{equation*}
 where $Z_{t} \approx \textrm{WN}(0,\phi^{2})$ and $\phi+\theta \neq 0 $
 or in terms of filters $\phi$ and $\theta$
@@ -118,8 +129,8 @@ or in terms of filters $\phi$ and $\theta$
 \begin{block}{Remarks}
 \begin{itemize}
 \item A stationary solution of the ARMA(1,1) equation exists if and only if $\phi \neq \pm 1$
-\item If $|\phi| < 1$, then the unique stationary solution is given by $X_{t}=Z_{t}+(\phi+\theta)\sum^{\infty}_{j=1}\phi^{j-1}Z_{t-j}$. In this case we say that $X_{t}$ is causal or a causal function of ${Z_{t}}$ or a causal function of ${Z_{t}}$ since $X_{t}$ can be espressd in terms of the current and past values $Z_{s}$, $s\leq t$
-\item If $|\phi| >1$, then the unique stationary solution is given by $X_{t}=-\theta\phi^{-1}Z_{t}-(\phi+\theta)\sum^{\infty}_{j=1}\phi^{-j-1}Z_{t-j}$. The solution is noncausal, since $X_{t}$ is then a functional of $Z_{s}$ $s\geq t$
+\item If $|\phi| < 1$, then the unique stationary solution is given by $X_{t}=Z_{t}+(\phi+\theta)\sum^{\infty}_{j=1}\phi^{j-1}Z_{t-j}$. In this case we say that $X_{t}$ is causal or a causal function of ${Z_{t}}$ or a causal function of ${Z_{t}}$ since $X_{t}$ can be expressed in terms of the current and past values $Z_{s}$, $s\leq t$
+\item If $|\phi| >1$, then the unique stationary solution is given by $X_{t}=-\theta\phi^{-1}Z_{t}-(\phi+\theta)\sum^{\infty}_{j=1}\phi^{-j-1}Z_{t-j}$. The solution is non-causal, since $X_{t}$ is then a functional of $Z_{s}$ $s\geq t$
 \end{itemize}
 \end{block}
 \end{frame}
@@ -141,7 +152,7 @@ where ${V_{t}}$ is deterministic
 \begin{alertblock}{ARMA (p,q)}
 ${X_{t}}$ is an ARMA(p,q) process if ${X_{t}}$ is stationary and if for every t, 
 \begin{equation*}
-X_{t}-\phi_{1} X_{t-1}-...-\phi_{1} X_{t-q}-=Z_{t}+\phi Z_{t}+\phi_{1}Z_{t-1}+...+\theta_{q}Z_{t-q}
+X_{t}-\phi_{1} X_{t-1}-...-\phi_{1} X_{t-q}-=Z_{t}+\theta Z_{t}+\theta_{1}Z_{t-1}+...+\theta_{q}Z_{t-q}
 \end{equation*}
 where ${Z_{t}} \approx WN(0,\sigma^{2})$ and the polynomials $\left(1-\phi_{1}z-...-\phi_{p}z^{p}\right)$ and $\left(1+\phi_{1}z+...+\phi_{p}z^{p}\right)$ have no common factor. 
 \end{alertblock}
@@ -158,6 +169,16 @@ this is equivalent to the condition
 \phi(z)=1-\phi_{1}z-...-\phi_{p}z^{p}\neq \quad|z|<1
 \end{equation*}
 \end{alertblock}
+\end{frame}
+
+\section{Spectral Analysis}
+
+
+\begin{frame}
+\begin{center}
+\Huge
+Spectral Analysis
+\end{center}
 \end{frame}
 
 
@@ -184,7 +205,7 @@ A function $\gamma()$ defined on the integers is the ACVF of a stationary time s
 \begin{equation*}
 \gamma(h)=\int_{(-\pi,\pi]}e^{ih\lambda}dF(\lambda)
 \end{equation*}
-for all integers h. F is a genralized distribution function that is called the spectral distribution function of  $\gamma()$
+for all integers h. F is a generalized distribution function that is called the spectral distribution function of  $\gamma()$
 \end{alertblock}
 \end{frame}
 
@@ -200,7 +221,7 @@ for all integers h. F is a genralized distribution function that is called the s
 The process ${Y_{t}}$ is the output of a linear filter $C=\left\lbrace c_{t,k},t,k=0\pm1,...\right\rbrace$  applied to an input process ${X_{t}}$ if $Y_{t}=\sum^{\infty}_{k=-\infty}c_{t,k}X_{k}\quad t=0,\pm 1,...$
 \end{alertblock}
 \begin{alertblock}{Time invariant}
-The filter is said to be time-invariant if the weights $c_{t,t-k}$ are indipendent of t e.g. $c_{t,t-k}=\phi_{k}$
+The filter is said to be time-invariant if the weights $c_{t,t-k}$ are independent of t e.g. $c_{t,t-k}=\phi_{k}$
 \begin{equation*}
 Y_{t}=\sum^{\infty}_{k=-\infty}\phi_{t,k}X_{t-k}
 \end{equation*}
@@ -240,7 +261,7 @@ where $\psi=(2q+1)^{-1},j=-q,...,q$ and $\psi_{j}$
 
 \begin{frame}{Time-Invariant Linear Filters \cite{brockwell2002introduction}}
 \begin{exampleblock}{Gibbs phenomenon}
-The poor approximation in the neighborhood of cut-off frequency $(\omega_{c})$ 
+The poor approximation in the neighbourhood of cut-off frequency $(\omega_{c})$ 
 \end{exampleblock}
     \begin{center}
      \includegraphics[width=\textwidth]{Pic/gibbs_ph.png}
@@ -248,8 +269,87 @@ The poor approximation in the neighborhood of cut-off frequency $(\omega_{c})$
 \end{frame}
 
 
+\section{Estimation}
+\begin{frame}
+\begin{center}
+\Huge
+Estimation
+\end{center}
+\end{frame}
 
+\begin{frame}{Esimation \cite{brockwell2002introduction}}
+\small
+\begin{alertblock}{Gaussian Likehood}
+\begin{equation*}
+L(\bm{\hat{\phi}},\bm{\hat{\theta}},\bm{\sigma}^{2})=\dfrac{1}{\sqrt{(2\pi\sigma)^{n}r_{0}...r_{n-1})}}\exp(-\dfrac{1}{2\sigma^{2}}\sum \dfrac{(X_{j}-\hat{X_{j}})^{2}}{r_{j-1}})
+\end{equation*}
+\end{alertblock}
+\begin{alertblock}{Maximum Likehood Estimators}
+Differentiating $\ln L(\phi,\theta\,\sigma^{2})$ partially with respect to $\sigma^{2}$ and noting that $\hat{X_{j}}$ and $r_{j}$ are independent of $\sigma$
+\begin{equation*}
+\hat{\sigma}^{2}=n^{-1}S(\bm{\hat{\phi}},\bm{\hat{\theta}})
+\end{equation*}
+\begin{equation*}
+S(\bm{\hat{\phi}},\bm{\hat{\theta}})=\sum^{n}_{j=1}(X_{j}-\hat{X_{j}})^{2}/r_{j-1}
+\end{equation*}
+where $\bm{\hat{\phi}}$,$\bm{\hat{\theta}}$ are the values of $\bm{\phi}$,$\bm{\theta}$ that minimize:
+\begin{equation*}
+\mathcal{L}(\phi,\theta)=\ln(n^{-1}S(\phi,\theta))+n^{-1}\sum^{n}_{j=1}\ln r_{j-1}
+\end{equation*}
 
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{Estimation \cite{brockwell2002introduction}}
+\begin{alertblock}{Akaike information criterion}
+\begin{equation*}
+AICC=-2\ln L(\bm{\hat{\phi}},\bm{\hat{\theta}},S((\phi_{p},\theta_{q})/n)+2(p+q+1)n/(n-p-q-2)
+\end{equation*}
+\end{alertblock}
+\begin{alertblock}{Residual}
+\begin{equation*}
+\hat{W}_{t}=\left( X_{t} -\hat{X_{t}}\phi,\theta\right)/\left(r_{t-1}( \hat{\phi},\hat{\theta})\right)^{1/2} \quad t=1,...,n 
+\end{equation*}
+This should have properties similar to the white noise sequence, thus one can define the rescaled residuals
+\begin{equation*}
+\hat{R}_{t}=\hat{W}_{t}/\hat{\sigma} 
+\end{equation*}
+\begin{equation*}
+\hat{\sigma}=\sqrt{\left(\sum^{n}_{t=1}\hat{W}^{2}_{t}\right)/n}
+\end{equation*}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Residuals \cite{brockwell2002introduction}}
+    \begin{center}
+     \includegraphics[width=0.8\textwidth]{Pic/Residuals.png}
+    \end{center}
+\end{frame}
+
+\section{Estimation}
+\begin{frame}
+\begin{center}
+\Huge
+Nonstationary time series
+\end{center}
+\end{frame}
+
+\begin{frame}{Residuals \cite{brockwell2002introduction,ur}}
+    \begin{center}
+     \includegraphics[width=0.8\textwidth]{Pic/unit_root_ts.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Estimation \cite{brockwell2002introduction}}
+\begin{alertblock}{Akaike information criterion}
+If $d$ is a non-negative integer, then ${X_{t}}$ is an ARIMA(p,d,q) process if 
+\begin{equation*}
+Y_{t}=(1-B)^{d}X_{t}
+\end{equation*}
+is causal ARMA(p,q) process $BX_{t}=X_{t-1}$. Note thaat $\nabla X_{t}=X_{t}-X_{t-1}$
+\end{alertblock}
+\end{frame}
 
 
 \begin{frame}[noframenumbering,t,allowframebreaks]
