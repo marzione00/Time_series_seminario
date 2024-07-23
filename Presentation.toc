@@ -3,4 +3,5 @@
 \beamer@sectionintoc {1}{Preliminary definitions}{2}{0}{1}
 \beamer@sectionintoc {2}{Spectral Analysis}{13}{0}{2}
 \beamer@sectionintoc {3}{Estimation}{21}{0}{3}
-\beamer@sectionintoc {4}{Estimation}{25}{0}{4}
+\beamer@sectionintoc {4}{Nonstationary time series}{25}{0}{4}
+\beamer@sectionintoc {5}{Multivariate time series}{28}{0}{5}

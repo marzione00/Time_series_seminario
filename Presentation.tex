@@ -327,7 +327,7 @@ This should have properties similar to the white noise sequence, thus one can de
     \end{center}
 \end{frame}
 
-\section{Estimation}
+\section{Nonstationary time series}
 \begin{frame}
 \begin{center}
 \Huge
@@ -348,6 +348,24 @@ If $d$ is a non-negative integer, then ${X_{t}}$ is an ARIMA(p,d,q) process if
 Y_{t}=(1-B)^{d}X_{t}
 \end{equation*}
 is causal ARMA(p,q) process $BX_{t}=X_{t-1}$. Note thaat $\nabla X_{t}=X_{t}-X_{t-1}$
+\end{alertblock}
+\end{frame}
+
+\section{Multivariate time series}
+\begin{frame}
+\begin{center}
+\Huge
+Multivariate time series
+\end{center}
+\end{frame}
+
+\begin{frame}{Multivariate time series \cite{brockwell2002introduction}}
+\begin{alertblock}{Akaike information criterion}
+$\left\lbrace \textbf{X}_{t} \right\rbrace$ is an ARMA (p,q) process if $\left\lbrace \textbf{X}_{t} \right\rbrace$ is stationary and if for every t, 
+\begin{equation*}
+\bm{X}_{t}-\phi_{1}\bm{X}_{t-1}-...-\phi_{p}X_{t-p}=Z_{t}+\Theta_{1}Z_{t-1}+...+\Theta_{q}Z_{t-q}
+\end{equation*}
+where $Z_{t}\approx$ WN(0,\Sigma)
 \end{alertblock}
 \end{frame}
 
