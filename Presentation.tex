@@ -438,18 +438,33 @@ Hidden Markov Model (HMM) $\rightarrow$ a SSM in which the hidden states are dis
 \begin{frame}{Space State Models  \cite{pml2Book}}
 \small
 \begin{exampleblock}{Time series segmentation}
-We want to segment a time series into different regimes, each of which correspond to a different statistical distribution. In particular we woul like to segment this data stream in to K different regimes or states, each of which is associated with a Poisson observation model with rate $\lambda_{k}$:
+We want to segment a time series into different regimes, each of which correspond to a different statistical distribution. In particular we would like to segment this data stream in to K different regimes or states, each of which is associated with a Poisson observation model with rate $\lambda_{k}$:
 \begin{equation*}
 p(y_{t}|z_{t}=k)= Poi\left(y_{t}|\lamda_{k}\right)
 \end{equation*}
-where a uniform prior over the initial states was considered. As the transition matrix, we assume that the Markov chain stays in the same state with probability p=0.95 and otherwise transitions to one of the other K-1 states unformely at random: 
+where a uniform prior over the initial states was considered. The transition matrix will be:
 \begin{equation*}
 z_{1}\approx \textnormal{Categorical}\left( \left\lbrace \dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4}\right\rbrace \right)
 \end{equation*}
 \begin{equation*}
 z_{1}|z_{t-1}\approx \textnormal{Categorical}\left( \left\lbrace  \begin{pmatrix} p  \quad z_{t}=z_{t-1} \\ \dfrac{1-p}{4-1}  \quad \textnormal{else}  \end{pmatrix}  \right\rbrace \right)
 \end{equation*}
+\begin{equation*}
+p(y_{1:T}|K)\approx \max_{\lambda}\sum p\left( \bm{y}_{1:T},\bm{z}_{1:T}| \bm{\lambda},K \right)
+\end{equation*}
 \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Structural time series models \cite{pml2Book}}
+\begin{alertblock}{Structural time series (STS)}
+Defined in terms of linear-Gaussian SSMs. Differently from ARMA method, they have much more flexibility: one can create non-linear, non-Gaussian and even hierarchical extension.
+\end{alertblock}
+\begin{alertblock}{Basic idea}
+Represent the observed scalar time series as a sum of C individual components
+\begin{equation*}
+f(t)=f_{1}(t)+f(t)+...+f_{C}(t)+\epsilon_{t}
+\end{equation*}
+\end{alertblock}
 \end{frame}
 
 
