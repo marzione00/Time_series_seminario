@@ -484,9 +484,28 @@ y_{t}=\mu_{t}+\epsilon_{y,t} \quad \epsilon_{y,t}\approx \mathcal{N}(0,\sigma_{y
 \mu_{t}=\mu_{t-1}+\epsilon_{t-1}_{\mu,t} \quad_{\mu,t} \approx  \mathcal{N}(0,\sigma_{\mu}^{2})
 \end{split}
 \end{equation*}
-One can also assume that $\mu_{1} \in  \mathcal{N}(0,\sigma^{2}_{\mu}$. Thus the latent mean at any future step has distribution $\mu_{t} \in  \mathcal{N}(0,t\sigma^{2}_{\mu}$ so the variance grows with time. Once can also use an autoregressive model in which $\mu_{t}=\rho\mu_{t-1}+\epsilon_{\mu,t}$ where $|\rho<1|$. In this case we have $\mu_{\infty}\approx \mathcal{N}(0,\dfrac{\sigma^{2}_{\mu}}{1-\rho^{2}})$: thus the uncertanty grows to finite asyntopte insteat of undoubtedly
+One can also assume that $\mu_{1} \in  \mathcal{N}(0,\sigma^{2}_{\mu})$. Thus the latent mean at any future step has distribution $\mu_{t} \in  \mathcal{N}(0,t\sigma^{2}_{\mu}$ so the variance grows with time. Once can also use an autoregressive model in which $\mu_{t}=\rho\mu_{t-1}+\epsilon_{\mu,t}$ where $|\rho<1|$. In this case we have $\mu_{\infty}\approx \mathcal{N}(0,\dfrac{\sigma^{2}_{\mu}}{1-\rho^{2}})$: thus the uncertainty grows to finite asymptote instead of undoubtedly
 \end{exampleblock}
 \end{frame}
+
+\begin{frame}{Structural time series models \cite{pml2Book}}
+\small
+\begin{exampleblock}{Space representation of ARMA models}
+In this case we have 
+\begin{equation}
+Z= \begin{pmatrix} Y_{t-p+1} \\ Y_{t-p+2}  \\ ... \\ Y_{t} \end{pmatrix}
+\end{equation}
+And the observation equation is
+\begin{equation}
+Y_{t}=[0,0,0,...,1]X_{t} \quad t=\pm 0,\pm 1,...
+\end{equation}
+And the state equation is 
+\begin{equation}
+X_{t+1}= \begin{pmatrix} 0 & 1 &  0 &... & 0 \\ 0 & 0 & 1 & ... & 0  \\ ... \\ 0 & 0  & 0 & ... & 1 \\ \phi_{p} & \phi_{p-1} & \phi_{p-2} & ... & \phi_{1} \end{pmatrix} \bm{X}_{t}+ \begin{pmatrix} 0 \\ 0 \\... \\ 0 \\ 1 \end{pmatrix}\textrm{WN}(0,\sigma^{2}) \quad t=0,\pm{1},...
+\end{equation}
+\end{exampleblock}
+\end{frame}
+
 
 
 

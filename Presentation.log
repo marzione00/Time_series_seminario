@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  25 JUL 2024 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.27)  26 JUL 2024 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2330,11 +2330,17 @@ I treat `x_1_2' essentially like `x_1{}_2'.
 [37
 
 ]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 496.
+Overfull \vbox (0.4604pt too high) detected at line 507
+ []
 
 [38
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 515.
+
+[39
 
 ]
 \tf@nav=\write8
@@ -2362,10 +2368,10 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41390 strings out of 474462
- 824825 string characters out of 5752662
+ 41402 strings out of 474462
+ 825190 string characters out of 5752662
  1942998 words of memory out of 5000000
- 62798 multiletter control sequences out of 15000+600000
+ 62808 multiletter control sequences out of 15000+600000
  599304 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,22n,123p,1883b,2609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2393,9 +2399,9 @@ X/fonts/type1/public/amsfonts/euler/eurm10.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/public/amsfonts/euler/eurm7.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/euler/eusm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfont
 s/symbols/msbm10.pfb>
-Output written on Presentation.pdf (38 pages, 1669649 bytes).
+Output written on Presentation.pdf (39 pages, 1676945 bytes).
 PDF statistics:
- 1017 PDF objects out of 1200 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 1593 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1039 PDF objects out of 1200 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 1629 words of extra memory for PDF output out of 10000 (max. 10000000)
 

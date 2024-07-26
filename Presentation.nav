@@ -90,13 +90,15 @@
 \headcommand {\beamer@framepages {36}{36}}
 \headcommand {\slideentry {6}{0}{6}{37/37}{}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\beamer@sectionpages {32}{37}}
-\headcommand {\beamer@subsectionpages {32}{37}}
-\headcommand {\sectionentry {7}{Riferimenti bibliografici}{38}{Riferimenti bibliografici}{0}}
-\headcommand {\slideentry {7}{0}{0}{38/38}{}{0}}
+\headcommand {\slideentry {6}{0}{7}{38/38}{}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\beamer@partpages {1}{38}}
-\headcommand {\beamer@subsectionpages {32}{38}}
 \headcommand {\beamer@sectionpages {32}{38}}
-\headcommand {\beamer@documentpages {38}}
-\headcommand {\gdef \inserttotalframenumber {37}}
+\headcommand {\beamer@subsectionpages {32}{38}}
+\headcommand {\sectionentry {7}{Riferimenti bibliografici}{39}{Riferimenti bibliografici}{0}}
+\headcommand {\slideentry {7}{0}{0}{39/39}{}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\beamer@partpages {1}{39}}
+\headcommand {\beamer@subsectionpages {32}{39}}
+\headcommand {\beamer@sectionpages {32}{39}}
+\headcommand {\beamer@documentpages {39}}
+\headcommand {\gdef \inserttotalframenumber {38}}
