@@ -395,6 +395,12 @@ $y_{2}$ cause (in Granger sense) $y_{1}$ if the coefficent $a_{1,2}$ is signfica
 \end{frame}
 
 \section{State-space models}
+\begin{frame}
+\begin{center}
+\Huge
+State-space models
+\end{center}
+\end{frame}
 
 \begin{frame}{Space State Models  \cite{pml2Book}}
 \begin{alertblock}{Definition}
@@ -504,6 +510,62 @@ And the state equation is
 X_{t+1}= \begin{pmatrix} 0 & 1 &  0 &... & 0 \\ 0 & 0 & 1 & ... & 0  \\ ... \\ 0 & 0  & 0 & ... & 1 \\ \phi_{p} & \phi_{p-1} & \phi_{p-2} & ... & \phi_{1} \end{pmatrix} \bm{X}_{t}+ \begin{pmatrix} 0 \\ 0 \\... \\ 0 \\ 1 \end{pmatrix}\textrm{WN}(0,\sigma^{2}) \quad t=0,\pm{1},...
 \end{equation}
 \end{exampleblock}
+\end{frame}
+
+
+\section{The Kalman Recursions}
+\begin{frame}
+\begin{center}
+\Huge
+The Kalman Recursions
+\end{center}
+\end{frame}
+
+
+\begin{frame}{The Kalman Recursions \cite{brockwell2002introduction}}
+\small
+\begin{alertblock}{General idea }
+Finding the best (in the sense of minimum square error) linear estimates of the state vector $X_{t}$ in terms of observations $Y_{1}$,$Y_{2}$ and a random vector $Y_{0}$ that is orthogonal to $V_{t}$ and $W_{t}$ for all $t\geq 1$ for these three cases: 
+\begin{itemize}
+\item $Y_{0},...,Y_{t-1}$ defines the prediction problem
+\item $Y_{0},...,Y_{t}$ defines the filtering problem
+\item $Y_{0},...,Y_{n}$ ($n > t$) defines the smoothing problem 
+\end{itemize}
+these problem can be solved useing the Kalman recursion
+\end{alertblock}
+\begin{alertblock}{Best linear predictor}
+For the random vector $X=(X_{1},...,X_{\nu})'$ 
+\begin{equation*}
+P(X)=(P_{t}(X_{1}),...,P_{t}(X_{\nu}))'
+\end{equation*}
+where $P_{t}(X)=P(X_{i}|\bm{Y}_{0},\bm{Y}_{1},...,\bm{Y}_{t})$  is the best linear predictor of $X_{i}$ in terms of all components of $\bm{Y}_{0},\bm{Y}_{1},...,\bm{Y}_{t}$
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{The Kalman Recursions  \cite{brockwell2002introduction}}
+\small
+\begin{alertblock}{Kalman prediction}
+For the state-space model 
+\begin{equation*}
+\begin{split}
+Y_{t} &= G_{t}X_{t}+W_{t} \\
+X_{t+1} &= F_{t}X_{t}+V_{t}\\
+\end{split}
+\end{equation*}
+where W and V are two uncorrelated noises. The one-step predictors $\hat{X}_{t}=P_{t-1}(X_{t})$ and their error covariance matrices $\Omega_{t}=E\left[(X_{t}-\hat{X_{t}})(X_{t}-\hat{X_{t}})' \right]$ are uniquely determinated by the initial conditions 
+\begin{equation*}
+\hat{\bm{X}_{t}}=P(X_{t}|Y_{0}) \quad \Omega_{1}=E\left[\left(\bm{X}_{1}-\hat{\bm{X}}_{1}\right)\left(\bm{X}_{1}-\hat{\bm{X}}_{1}\right)' \right]
+\end{equation*}
+and the recursion, for $t=1,...,$ 
+\begin{equation*}
+\begin{split}
+\hat{\bm{X}}_{t+1}=&F_{t}\hat{\bm{X}}_{t}+\Theta_{t}\Delta_{t}^{-1}\left( \bm{Y}_{t}-G_{t}\hat{\bm{X}}_{t}  \right) \\
+\Omega_{t+1}=&F_{t} \Omega F_{t}'+Q_{t}-\Theta_{t}\Delta_{t}^{-1}\Theta_{t}'
+\end{split}
+\end{equation*}
+where $\Delta_{t}=G_{t}\Omega_{t}G_{t}'+R_{t} \quad \Theta_{t}=F_{t}\Omega_{t}G_{t}'$
+\end{alertblock}
 \end{frame}
 
 
