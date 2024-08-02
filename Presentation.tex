@@ -335,7 +335,7 @@ Nonstationary time series
 \end{center}
 \end{frame}
 
-\begin{frame}{Residuals \cite{brockwell2002introduction,ur}}
+\begin{frame}{Examples \cite{brockwell2002introduction,ur}}
     \begin{center}
      \includegraphics[width=0.8\textwidth]{Pic/unit_root_ts.png}
     \end{center}
@@ -513,13 +513,90 @@ X_{t+1}= \begin{pmatrix} 0 & 1 &  0 &... & 0 \\ 0 & 0 & 1 & ... & 0  \\ ... \\ 0
 \end{frame}
 
 
+\begin{frame}{Bayesian structural time series \cite{pml2Book}}
+\small
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{alertblock}{Traking and state estimation}
+A BSTS model with local linear trend and linear regression on inputs. The observed output
+is $y_{t}$. The latent state vector is defined by $z_{t} = (\mu_{t}, \delta_{t})$. The (static) parameters are $\theta = (\sigma_{y}, \sigma_{\mu}, \sigma_{\delta}, \beta)$. The
+covariates are $u_{t}$
+\end{alertblock}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{Pic/BSTS.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+
+
 \section{The Kalman Recursions}
+
 \begin{frame}
 \begin{center}
 \Huge
 The Kalman Recursions
 \end{center}
 \end{frame}
+
+\begin{frame}{Intuitive idea \cite{pml2Book}}
+\small
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{alertblock}{Traking and state estimation}
+We want to track an object moving in 2D. The hidden state $x_{t}$ encodes the location $(x_{t1},x_{t2})$ and the velocity $\dot{x}_{t1},\dot{x}_{t2}$ of the moving object. The observation $\textbf{y}_{t}$ is a noisy version of the location. Suppose that that the sampling period is $\Delta$, thus
+\begin{equation}
+\bm{x}_{t}= \begin{pmatrix} 1 & 0 & \Delta & 0 \\ 0 & 1 & 0 & \Delta \\ 0 & 0 & 1 & 0 \\  0 & 0 & 0 & 1   \end{pmatrix} \bm{x}_{t-1}+\textbf{WN}
+\end{equation}
+\begin{equation}
+\bm{y}_{t}= \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0  \end{pmatrix} \bm{x}_{t-1}+\textbf{WN}
+\end{equation}
+\end{alertblock}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{Pic/Kalman_rec.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Intuitive idea \cite{pml2Book}}
+\small
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{alertblock}{Traking and state estimation}
+Possible tasks 
+\begin{itemize}
+\item Prediction
+\item Filtering: estimate the unknown location (and velocity) of the object given the noisy obstervation (on-line)
+\item Smoothing: inference of the locations, given all the observations (off-line)
+\end{itemize}
+\end{alertblock}
+    \begin{center}
+     \includegraphics[width=0.4\textwidth]{Pic/schema.png}
+     \end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{Pic/Kalman_rec.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Intuitive idea \cite{kl}}
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{Pic/Kalman_example.png}
+     \end{center}
+\end{frame}
+
 
 
 \begin{frame}{The Kalman Recursions \cite{brockwell2002introduction}}
@@ -531,7 +608,6 @@ Finding the best (in the sense of minimum square error) linear estimates of the 
 \item $Y_{0},...,Y_{t}$ defines the filtering problem
 \item $Y_{0},...,Y_{n}$ ($n > t$) defines the smoothing problem 
 \end{itemize}
-these problem can be solved useing the Kalman recursion
 \end{alertblock}
 \begin{alertblock}{Best linear predictor}
 For the random vector $X=(X_{1},...,X_{\nu})'$ 
@@ -567,6 +643,41 @@ and the recursion, for $t=1,...,$
 where $\Delta_{t}=G_{t}\Omega_{t}G_{t}'+R_{t} \quad \Theta_{t}=F_{t}\Omega_{t}G_{t}'$
 \end{alertblock}
 \end{frame}
+
+
+\begin{frame}{The Kalman Recursions   \cite{brockwell2002introduction}}
+\small
+\begin{alertblock}{Kalman Filtering}
+The filtered estimates $X_{t|t}=P_{t}(X_{t})$ and their error covariance matrices $\Omega_{t|t}=E\left[\left(X_{t}-X_{t|t}\right)\left(X_{t}-X_{t|t}\right)' \right]$ are determinated by the relations 
+\begin{equation*}
+P_{t}\textbf{X}_{t}=P_{t-1}\textbf{X}_{t}+\Omega_{t}G_{t}'\Delta^{-1}_{t}\left(\textbf{Y}_{t}-G_{t}\hat{\textbf{X}}_{t} \right)
+\end{equation*}
+and 
+\begin{equation*}
+\Omega_{t|t}=\Omega_{t}-\Omega_{t}G'_{t}\Delta^{-1}_{t}G_{t}\Omega_{t}'
+\end{equation*}
+\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{The Kalman Recursions   \cite{brockwell2002introduction}}
+\small
+\begin{alertblock}{The Kalman Fixed-Point Smoothing}
+The smoothed estimates $X_{t|n}= P_{n}X_{t}$ and the error covariance matrices $\Omega_{t|n}=E\left[(X_{t}-X_{t|n})(X_{t}-X_{t|n})'\right]$ are determinated for fixed t by the following recursions, which can be solved successively for $n=t,t+1,..$
+\begin{equation*}
+P_{n}\textbf{X}_{t}=P_{n-1}\textbf{X}_{t}+\Omega_{t}G_{t}'\Delta^{-1}_{t}\left(\textbf{Y}_{n}-G_{n}\hat{\textbf{X}}_{n} \right)
+\end{equation*}
+and 
+\begin{equation*}
+\Omega_{t|n+1}=\Omega_{t,n}\left[F_{n}-\Theta_{n}\Delta_{n}^{-1}G_{n} \right]
+\end{equation*}
+\begin{equation*}
+\Omega_{t|n}=\Omega_{t|n-1}-\Omega_{t,n}G_{n}'\Delta_{n}^{-1}G_{n}\Omega_{t,n}'
+\end{equation*}
+\end{alertblock}
+\end{frame}
+
+
 
 
 
