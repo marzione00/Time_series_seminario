@@ -25,6 +25,35 @@
   \field{howpublished}{\url{https://www.lancaster.ac.uk/stor-i-student-sites/jack-trainer/how-nasa-used-the-kalman-filter-in-the-apollo-program/}}
   \endentry
 
+  \entry{aastrom2021feedback}{book}{}
+    \name{author}{2}{}{%
+      {{hash=AKJ}{%
+         family={{\AA}str{\"o}m},
+         familyi={{\AA}\bibinitperiod},
+         given={Karl\bibnamedelima Johan},
+         giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Murray},
+         familyi={M\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton university press}%
+    }
+    \strng{namehash}{AKJMR1}
+    \strng{fullhash}{AKJMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Feedback systems: an introduction for scientists and
+  engineers}
+    \field{year}{2021}
+  \endentry
+
   \entry{brockwell2002introduction}{book}{}
     \name{author}{2}{}{%
       {{hash=BPJ}{%

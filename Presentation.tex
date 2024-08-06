@@ -58,11 +58,10 @@ Preliminary definitions
 \end{frame}
 
 \begin{frame}{Time series definition \cite{brockwell2002introduction}}
+\small
 \begin{alertblock}{Informal definition}
-A time-series is a set of observation $x_{t}$ each one being recorder at a specific time t. 
-\end{alertblock}
-\begin{alertblock}{Formal definition }
-A time series model for the observed data ${x}_{t}$ is a specification of the joint distribution (or possible only the means covariance) of a sequence of random variable ${X}_{t}$ of which ${x}_{t}$ is postulated to be a realization
+INTUITIVE DEFINITION: A time-series is a set of observation $x_{t}$ each one being recorder at a specific time t.  \\
+FORMAL DEFINITION: A time series model for the observed data ${x}_{t}$ is a specification of the joint distribution (or possible only the means covariance) of a sequence of random variable ${X}_{t}$ of which ${x}_{t}$ is postulated to be a realization
 \end{alertblock}
 \begin{exampleblock}{A binary process}
 Consider the sequence of iid random variables, with $P[X_{t}=1]=p$ and $P[X_{t}=-1]=1-p$
@@ -74,8 +73,9 @@ The random walk is obtained by cumulatively summing iid random variables. Thus a
 
 
 \begin{frame}{Stationarity, autocovariance and autocorrelation\cite{brockwell2002introduction}}
+\small
 \begin{alertblock}{Mean Function}
-Let ${X_{t}}$ be a time series with $E({x}_{t}^{2}< \infty$  The mean function of ${X_{t}}$ is $\mu_{X}(t)=E(X_{t})$. The covariance function of ${X_{t}}$ is $\gamma_{X}(r,s)=Cov(X_{r},X_{S})=E[(X_{r}-\mu_{X}(r))(X_{s}-\mu_{X}(s))]\quad\forall r,s$ 
+Let ${X_{t}}$ be a time series with $E({x}_{t}^{2})< \infty$  The mean function of ${X_{t}}$ is $\mu_{X}(t)=E(X_{t})$. The covariance function of ${X_{t}}$ is $\gamma_{X}(r,s)=Cov(X_{r},X_{S})=E[(X_{r}-\mu_{X}(r))(X_{s}-\mu_{X}(s))]\quad\forall r,s$ 
 \end{alertblock}
 \begin{alertblock}{Weakly stationary TS}
 ${X_{t}}$ is weakly stationary if i) $\mu_{X}(t)$ is independent from time t and ii) $\gamma_{X}(t+h)$ is indipendent of t $\forall h$
@@ -112,7 +112,7 @@ for all t, where ${Z_{t}}\approx \textrm{WN}(0,\sigma^{2})$ and ${\psi_{j}}$ is 
 
 
 \begin{frame}{Definition \cite{brockwell2002introduction}}
-\begin{alertblock}{Linear process}
+\begin{alertblock}{autoregressive–moving-average models (ARMA)}
 The time series ${X_{t}}$ is an ARMA(1,1) process if its stationary and satisfiy (for every t) 
 \begin{equation*}
 X_{t}-\phi X_{t-1}=Z_{t}+\theta Z_{t-1}
@@ -135,18 +135,18 @@ or in terms of filters $\phi$ and $\theta$
 \end{block}
 \end{frame}
 
-\begin{frame}{Wold decomposition \cite{brockwell2002introduction}}
-\begin{block}{Prediction operator based on the infinite past $X_{t},-\infty < t < n$}
-$\tilde{P}_{n}X_{n+h}=\lim_{m\rightarrow - \infty} P_{m,n}X_{n+h}$
-\end{block}
-\begin{block}{Wold decomposition $X_{t},-\infty < t < n$}
-$X_{t}$ is a non-deterministic stationary time series, then
-\begin{equation*}
-X_{t}=\sum^{\infty}_{j=0}\psi_{j}Z_{t-j}+V_{t}
-\end{equation*}
-where ${V_{t}}$ is deterministic
-\end{block}
-\end{frame}
+%\begin{frame}{Wold decomposition \cite{brockwell2002introduction}}
+%\begin{block}{Prediction operator based on the infinite past $X_{t},-\infty < t < n$}
+%$\tilde{P}_{n}X_{n+h}=\lim_{m\rightarrow - \infty} P_{m,n}X_{n+h}$
+%\end{block}
+%\begin{block}{Wold decomposition $X_{t},-\infty < t < n$}
+%$X_{t}$ is a non-deterministic stationary time series, then
+%\begin{equation*}
+%X_{t}=\sum^{\infty}_{j=0}\psi_{j}Z_{t-j}+V_{t}
+%\end{equation*}
+%where ${V_{t}}$ is deterministic
+%\end{block}
+%\end{frame}
 
 \begin{frame}{Definition \cite{brockwell2002introduction}}
 \begin{alertblock}{ARMA (p,q)}
@@ -191,25 +191,25 @@ f(\lambda)=\dfrac{1}{2\pi}\sum e^{-ih\lambda}\gamma(h)\quad -\infty<\lambda<\inf
 \end{equation*}
 with the condition that 
 \begin{equation*}
-f(\lambda)\geq 0 \quad\forall \lambda
+f(\lambda)\geq 0 \quad\forall \lambda \in (-\pi,\pi]
 \end{equation*}
 \begin{equation*}
-\gamma(h)=\int^{\pi}_{-\pi}e^{ih\lambda}f(\lambda)d\lambda\forall h
+\gamma(h)=\int^{\pi}_{-\pi}e^{ih\lambda}f(\lambda)d\lambda = \int^{\pi}_{-\pi} \cos(k\lambda)f(\lambda)d\lambda
 \end{equation*}
 \end{alertblock}
 \end{frame}
 
-\begin{frame}{Spectral Analysis \cite{brockwell2002introduction}}
-\begin{alertblock}{Spectral Representation of The ACVF}
-A function $\gamma()$ defined on the integers is the ACVF of a stationary time series if and only if there exists a right-continuous, non-decresing, bounded function F on $[-\pi,\pi]$ with $F(-\pi)=0$ such that:
-\begin{equation*}
-\gamma(h)=\int_{(-\pi,\pi]}e^{ih\lambda}dF(\lambda)
-\end{equation*}
-for all integers h. F is a generalized distribution function that is called the spectral distribution function of  $\gamma()$
-\end{alertblock}
-\end{frame}
+%\begin{frame}{Spectral Analysis \cite{brockwell2002introduction}}
+%\begin{alertblock}{Spectral Representation of The ACVF}
+%A function $\gamma()$ defined on the integers is the ACVF of a stationary time series if and only if there exists a right-continuous, non-decresing, bounded function F on $[-\pi,\pi]$ with $F(-\pi)=0$ such that:
+%\begin{equation*}
+%\gamma(h)=\int_{(-\pi,\pi]}e^{ih\lambda}dF(\lambda)
+%\end{equation*}
+%for all integers h. F is a generalized distribution function that is called the spectral distribution function of  $\gamma()$
+%\end{alertblock}
+%\end{frame}
 
-\begin{frame}{Spectral Analysis \cite{brockwell2002introduction}}
+\begin{frame}{Spectral Analysis \cite{aastrom2021feedback}}
     \begin{center}
      \includegraphics[width=0.6\textwidth]{Pic/spectral_distribution.png}
     \end{center}
@@ -221,12 +221,12 @@ for all integers h. F is a generalized distribution function that is called the 
 The process ${Y_{t}}$ is the output of a linear filter $C=\left\lbrace c_{t,k},t,k=0\pm1,...\right\rbrace$  applied to an input process ${X_{t}}$ if $Y_{t}=\sum^{\infty}_{k=-\infty}c_{t,k}X_{k}\quad t=0,\pm 1,...$
 \end{alertblock}
 \begin{alertblock}{Time invariant}
-The filter is said to be time-invariant if the weights $c_{t,t-k}$ are independent of t e.g. $c_{t,t-k}=\phi_{k}$
+The filter is said to be time-invariant if the weights $c_{t,t-k}$ are independent of t e.g. $c_{t,t-k}=\psi_{k}$
 \begin{equation*}
-Y_{t}=\sum^{\infty}_{k=-\infty}\phi_{t,k}X_{t-k}
+Y_{t}=\sum^{\infty}_{k=-\infty}\psi_{k}X_{t-k}
 \end{equation*}
 \begin{equation*}
-Y_{t-s}=\sum^{\infty}_{k=-\infty}\phi_{t,k}X_{t-s-k}
+Y_{t-s}=\sum^{\infty}_{k=-\infty}\psi_{k}X_{t-s-k}
 \end{equation*}
 The TLF $\phi$ is to be causal if $\phi_{j}=0$ for $j<0$
 \end{alertblock}
@@ -245,6 +245,13 @@ f_{Y}(\lambda)=|\Psi(e^{-i\lambda})|^{2}f_{X}(\lambda)=\Psi(e^{-i\lambda})\Psi(e
 \end{equation*}
 where $\Psi(e^{-i\lambda})=\sum^{\infty}_{j=-\infty}\phi_{j}e^{-ij\lambda}$ where  $\Psi(e^{-i})$ is called the transfer function of the filter, and the squared modulus $|\Psi(e^{-i})|$ is referred to as the power transfer function of the filter. 
 \end{alertblock}
+\end{frame}
+
+
+\begin{frame}{Transfer Functions \cite{aastrom2021feedback}}
+    \begin{center}
+     \includegraphics[width=\textwidth]{Pic/Funzioni_di_trasferimento.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}{Time-Invariant Linear Filters \cite{brockwell2002introduction}}
@@ -267,6 +274,9 @@ The poor approximation in the neighbourhood of cut-off frequency $(\omega_{c})$
      \includegraphics[width=\textwidth]{Pic/gibbs_ph.png}
     \end{center}
 \end{frame}
+
+
+
 
 
 \section{Estimation}
@@ -341,13 +351,13 @@ Nonstationary time series
     \end{center}
 \end{frame}
 
-\begin{frame}{Estimation \cite{brockwell2002introduction}}
-\begin{alertblock}{Akaike information criterion}
+\begin{frame}{Autoregressive integrated moving average \cite{brockwell2002introduction}}
+\begin{alertblock}{ARIMA definitio}
 If $d$ is a non-negative integer, then ${X_{t}}$ is an ARIMA(p,d,q) process if 
 \begin{equation*}
 Y_{t}=(1-B)^{d}X_{t}
 \end{equation*}
-is causal ARMA(p,q) process $BX_{t}=X_{t-1}$. Note thaat $\nabla X_{t}=X_{t}-X_{t-1}$
+is causal ARMA(p,q) process $BX_{t}=X_{t-1}$. Note that $\nabla X_{t}=X_{t}-X_{t-1}$
 \end{alertblock}
 \end{frame}
 
@@ -360,7 +370,7 @@ Multivariate time series
 \end{frame}
 
 \begin{frame}{Multivariate time series \cite{brockwell2002introduction}}
-\begin{alertblock}{Akaike information criterion}
+\begin{alertblock}{Definition}
 $\left\lbrace \textbf{X}_{t} \right\rbrace$ is an ARMA (p,q) process if $\left\lbrace \textbf{X}_{t} \right\rbrace$ is stationary and if for every t, 
 \begin{equation*}
 \bm{X}_{t}-\phi_{1}\bm{X}_{t-1}-...-\phi_{p}X_{t-p}=Z_{t}+\Theta_{1}Z_{t-1}+...+\Theta_{q}Z_{t-q}
@@ -441,25 +451,25 @@ Hidden Markov Model (HMM) $\rightarrow$ a SSM in which the hidden states are dis
     \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Space State Models  \cite{pml2Book}}
-\small
-\begin{exampleblock}{Time series segmentation}
-We want to segment a time series into different regimes, each of which correspond to a different statistical distribution. In particular we would like to segment this data stream in to K different regimes or states, each of which is associated with a Poisson observation model with rate $\lambda_{k}$:
-\begin{equation*}
-p(y_{t}|z_{t}=k)= Poi\left(y_{t}|\lamda_{k}\right)
-\end{equation*}
-where a uniform prior over the initial states was considered. The transition matrix will be:
-\begin{equation*}
-z_{1}\approx \textnormal{Categorical}\left( \left\lbrace \dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4}\right\rbrace \right)
-\end{equation*}
-\begin{equation*}
-z_{1}|z_{t-1}\approx \textnormal{Categorical}\left( \left\lbrace  \begin{pmatrix} p  \quad z_{t}=z_{t-1} \\ \dfrac{1-p}{4-1}  \quad \textnormal{else}  \end{pmatrix}  \right\rbrace \right)
-\end{equation*}
-\begin{equation*}
-p(y_{1:T}|K)\approx \max_{\lambda}\sum p\left( \bm{y}_{1:T},\bm{z}_{1:T}| \bm{\lambda},K \right)
-\end{equation*}
-\end{exampleblock}
-\end{frame}
+%\begin{frame}{Space State Models  \cite{pml2Book}}
+%\small
+%\begin{exampleblock}{Time series segmentation}
+%We want to segment a time series into different regimes, each of which correspond to a different statistical distribution. In particular we would like to segment this data stream in to K different regimes or states, each of which is associated with a %Poisson observation model with rate $\lambda_{k}$:
+%\begin{equation*}
+%p(y_{t}|z_{t}=k)= Poi\left(y_{t}|\lamda_{k}\right)
+%\end{equation*}
+%where a uniform prior over the initial states was considered. The transition matrix will be:
+%\begin{equation*}
+%z_{1}\approx \textnormal{Categorical}\left( \left\lbrace \dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4},\dfrac{1}{4}\right\rbrace \right)
+%\end{equation*}
+%\begin{equation*}
+%z_{1}|z_{t-1}\approx \textnormal{Categorical}\left( \left\lbrace  \begin{pmatrix} p  \quad z_{t}=z_{t-1} \\ \dfrac{1-p}{4-1}  \quad \textnormal{else}  \end{pmatrix}  \right\rbrace \right)
+%\end{equation*}
+%\begin{equation*}
+%p(y_{1:T}|K)\approx \max_{\lambda}\sum p\left( \bm{y}_{1:T},\bm{z}_{1:T}| \bm{\lambda},K \right)
+%\end{equation*}
+%\end{exampleblock}
+%\end{frame}
 
 \begin{frame}{Structural time series models \cite{pml2Book}}
 \small
